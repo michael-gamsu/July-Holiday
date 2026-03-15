@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>London & Croatia — July 2026 Travel Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F5F0E8;
+    --ink: #1A1614;
+    --muted: #6B6460;
+    --london: #1B4B73;
+    --london-light: #E8F0F7;
+    --croatia: #C7522A;
+    --croatia-light: #FAF0EB;
+    --gold: #C9A84C;
+    --green: #2D6A4F;
+    --green-light: #EAF3EE;
+    --border: #DDD8CF;
+    --white: #FFFFFF;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  /* HERO */
+  .hero {
+    background: var(--ink);
+    color: var(--cream);
+    padding: 60px 40px 50px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 400px; height: 400px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(201,168,76,0.15) 0%, transparent 70%);
+  }
+  .hero-eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 500;
+    margin-bottom: 16px;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    line-height: 1.1;
+    margin-bottom: 12px;
+    font-weight: 700;
+  }
+  .hero h1 em { font-style: italic; color: var(--gold); }
+  .hero-sub {
+    color: #B8B0A6;
+    font-size: 15px;
+    font-weight: 300;
+    margin-bottom: 32px;
+    max-width: 480px;
+  }
+  .hero-pills { display: flex; gap: 10px; flex-wrap: wrap; }
+  .pill {
+    font-size: 12px;
+    padding: 5px 14px;
+    border-radius: 30px;
+    border: 0.5px solid rgba(255,255,255,0.2);
+    color: #D8D0C8;
+    font-weight: 300;
+  }
+  .pill.highlight { background: var(--gold); color: var(--ink); border-color: var(--gold); font-weight: 500; }
+
+  /* NAV */
+  .nav {
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    padding: 0 40px;
+    display: flex;
+    gap: 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    overflow-x: auto;
+  }
+  .nav-btn {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    padding: 16px 20px;
+    border: none;
+    background: transparent;
+    color: var(--muted);
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    white-space: nowrap;
+    transition: all 0.2s;
+    letter-spacing: 0.02em;
+  }
+  .nav-btn.active { color: var(--ink); border-bottom-color: var(--ink); font-weight: 500; }
+  .nav-btn:hover:not(.active) { color: var(--ink); }
+
+  /* PANELS */
+  .panel { display: none; padding: 40px; max-width: 900px; margin: 0 auto; }
+  .panel.active { display: block; }
+
+  /* SECTION HEADERS */
+  .section-head {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 28px;
+  }
+  .section-icon {
+    width: 42px; height: 42px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+  .section-head h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 700;
+  }
+  .section-head p { font-size: 13px; color: var(--muted); margin-top: 2px; }
+
+  /* ROUTE BAR */
+  .route-bar {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 18px 24px;
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .route-city { font-weight: 500; font-size: 14px; }
+  .route-arrow { color: var(--muted); font-size: 18px; }
+  .route-tag {
+    font-size: 11px;
+    background: var(--cream);
+    border: 0.5px solid var(--border);
+    padding: 3px 10px;
+    border-radius: 20px;
+    color: var(--muted);
+  }
+
+  /* TIMELINE */
+  .timeline { display: flex; flex-direction: column; }
+  .tl-row { display: flex; gap: 0; }
+  .tl-left { width: 100px; min-width: 100px; text-align: right; padding: 14px 14px 14px 0; display: flex; flex-direction: column; justify-content: flex-start; }
+  .tl-date { font-size: 12px; font-weight: 500; color: var(--ink); }
+  .tl-day { font-size: 11px; color: var(--muted); margin-top: 2px; }
+  .tl-spine { display: flex; flex-direction: column; align-items: center; width: 28px; min-width: 28px; }
+  .tl-dot { width: 12px; height: 12px; border-radius: 50%; margin-top: 16px; flex-shrink: 0; border: 2px solid var(--white); box-shadow: 0 0 0 2px currentColor; }
+  .tl-line { flex: 1; width: 2px; background: var(--border); }
+  .tl-card {
+    flex: 1;
+    margin: 8px 0 8px 14px;
+    padding: 14px 18px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    transition: box-shadow 0.2s;
+  }
+  .tl-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.06); }
+  .tl-card h3 { font-size: 14px; font-weight: 500; margin-bottom: 4px; }
+  .tl-card p { font-size: 13px; color: var(--muted); line-height: 1.55; }
+  .tl-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 8px; }
+  .tag { font-size: 10px; padding: 3px 9px; border-radius: 20px; font-weight: 400; }
+  .tag-london { background: var(--london-light); color: var(--london); }
+  .tag-croatia { background: var(--croatia-light); color: var(--croatia); }
+  .tag-flight { background: #EEF2FF; color: #3B4DB8; }
+  .tag-beach { background: var(--green-light); color: var(--green); }
+  .tag-island { background: #FDF3E3; color: #8B5E1A; }
+  .tag-free { background: var(--green-light); color: var(--green); }
+  .tag-wknd { background: var(--cream); color: var(--muted); border: 0.5px solid var(--border); }
+
+  /* DESTINATION SPLIT */
+  .dest-split { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 28px; }
+  .dest-card {
+    border-radius: 14px;
+    padding: 22px;
+    border: 1px solid var(--border);
+  }
+  .dest-card.london { background: var(--london); color: var(--cream); }
+  .dest-card.croatia { background: var(--croatia); color: var(--cream); }
+  .dest-card .dc-label { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.7; margin-bottom: 8px; }
+  .dest-card h3 { font-family: 'Playfair Display', serif; font-size: 20px; margin-bottom: 4px; }
+  .dest-card p { font-size: 12px; opacity: 0.8; line-height: 1.5; }
+  .dest-card .dc-stat { font-size: 22px; font-weight: 500; margin-top: 14px; }
+  .dest-card .dc-stat-label { font-size: 11px; opacity: 0.65; }
+
+  /* GUIDE SECTIONS */
+  .guide-block { margin-bottom: 32px; }
+  .guide-block h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+  .item-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .item-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 13px 15px;
+  }
+  .item-card .ic-title { font-size: 13px; font-weight: 500; margin-bottom: 3px; }
+  .item-card .ic-desc { font-size: 12px; color: var(--muted); line-height: 1.45; }
+  .ic-free { display: inline-block; font-size: 10px; background: var(--green-light); color: var(--green); padding: 1px 7px; border-radius: 10px; margin-left: 6px; vertical-align: middle; }
+  .ic-paid { display: inline-block; font-size: 10px; background: #FFF3E0; color: #8B5E1A; padding: 1px 7px; border-radius: 10px; margin-left: 6px; vertical-align: middle; }
+
+  .tip-list { list-style: none; }
+  .tip-list li {
+    padding: 9px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.5;
+    display: flex;
+    gap: 10px;
+  }
+  .tip-list li:last-child { border-bottom: none; }
+  .tip-list li strong { color: var(--ink); font-weight: 500; min-width: 120px; }
+
+  /* BUDGET */
+  .budget-summary {
+    background: var(--ink);
+    color: var(--cream);
+    border-radius: 16px;
+    padding: 28px;
+    margin-bottom: 24px;
+  }
+  .budget-summary h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  .budget-rows { display: flex; flex-direction: column; gap: 0; }
+  .budget-row-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    font-size: 13px;
+  }
+  .budget-row-item:last-child { border-bottom: none; }
+  .bri-label { color: #B8B0A6; }
+  .bri-amount { font-weight: 500; }
+  .bri-amount.free-item { color: #6EBF8B; }
+  .bri-amount.saved { text-decoration: line-through; color: #666; font-size: 12px; }
+  .budget-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-top: 18px;
+    margin-top: 6px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+  }
+  .budget-total .bt-label { font-size: 13px; color: #B8B0A6; }
+  .budget-total .bt-amount { font-size: 26px; font-weight: 500; }
+
+  .per-person-card {
+    background: var(--gold);
+    border-radius: 14px;
+    padding: 22px 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+  .ppc-label { font-size: 13px; font-weight: 500; color: var(--ink); }
+  .ppc-range { font-family: 'Playfair Display', serif; font-size: 28px; color: var(--ink); font-weight: 700; }
+  .ppc-check { font-size: 12px; color: rgba(26,22,20,0.65); margin-top: 3px; }
+
+  .budget-grid-2 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 24px; }
+  .bg2-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 14px 16px;
+  }
+  .bg2-card.free-card { border-color: #2D6A4F; background: var(--green-light); }
+  .bg2-label { font-size: 11px; color: var(--muted); margin-bottom: 4px; }
+  .bg2-card.free-card .bg2-label { color: var(--green); }
+  .bg2-amount { font-size: 16px; font-weight: 500; }
+  .bg2-card.free-card .bg2-amount { color: var(--green); }
+  .bg2-note { font-size: 11px; color: var(--muted); margin-top: 3px; line-height: 1.4; }
+  .bg2-card.free-card .bg2-note { color: #2D6A4F; }
+  .free-badge { font-size: 10px; background: var(--green); color: white; padding: 2px 7px; border-radius: 10px; margin-left: 4px; }
+
+  /* VISA */
+  .visa-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 22px;
+    margin-bottom: 16px;
+  }
+  .visa-card .vc-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--border);
+  }
+  .vc-flag { font-size: 28px; }
+  .vc-title { font-family: 'Playfair Display', serif; font-size: 18px; }
+  .vc-sub { font-size: 12px; color: var(--muted); }
+  .vc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .vc-item { background: var(--cream); border-radius: 8px; padding: 10px 13px; }
+  .vc-item-label { font-size: 11px; color: var(--muted); margin-bottom: 2px; }
+  .vc-item-val { font-size: 13px; font-weight: 500; }
+  .warn-box {
+    background: #FFF8E6;
+    border: 1px solid #F0C040;
+    border-radius: 12px;
+    padding: 14px 18px;
+    font-size: 13px;
+    color: #7A5A00;
+    line-height: 1.6;
+    margin-top: 20px;
+  }
+  .warn-box strong { color: #5A4000; }
+
+  /* TIPS BLOCK */
+  .tips-block {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 22px;
+    margin-top: 20px;
+  }
+  .tips-block h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    margin-bottom: 14px;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 640px) {
+    .hero { padding: 40px 20px 36px; }
+    .hero h1 { font-size: 34px; }
+    .panel { padding: 24px 20px; }
+    .dest-split, .item-grid, .budget-grid-2, .vc-grid { grid-template-columns: 1fr; }
+    .tl-left { width: 72px; min-width: 72px; }
+    .per-person-card { flex-direction: column; gap: 8px; text-align: center; }
+    .nav { padding: 0 16px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-eyebrow">Your 2026 European Adventure</div>
+  <h1>London <em>&</em><br>Croatia</h1>
+  <p class="hero-sub">16 nights · July 2026 · Departing Johannesburg · Free London accommodation</p>
+  <div class="hero-pills">
+    <span class="pill highlight">10 days leave → 16 nights away</span>
+    <span class="pill">3 full weekends</span>
+    <span class="pill">2 countries</span>
+    <span class="pill">R21,500–R30,000 per person</span>
+  </div>
+</div>
+
+<nav class="nav">
+  <button class="nav-btn active" onclick="showPanel('overview')">Overview</button>
+  <button class="nav-btn" onclick="showPanel('itinerary')">Itinerary</button>
+  <button class="nav-btn" onclick="showPanel('london')">London Guide</button>
+  <button class="nav-btn" onclick="showPanel('croatia')">Croatia Guide</button>
+  <button class="nav-btn" onclick="showPanel('budget')">Budget</button>
+  <button class="nav-btn" onclick="showPanel('visas')">Visas & Admin</button>
+</nav>
+
+<!-- OVERVIEW -->
+<div id="overview" class="panel active">
+  <div class="section-head">
+    <div class="section-icon" style="background:#F0EDE8;">🗺️</div>
+    <div>
+      <h2>The trip at a glance</h2>
+      <p>London as your European hub, then straight down to the Dalmatian coast</p>
+    </div>
+  </div>
+
+  <div class="route-bar">
+    <span class="route-city">🇿🇦 Johannesburg</span>
+    <span class="route-arrow">→</span>
+    <span class="route-city">🇬🇧 London</span>
+    <span class="route-tag">Direct · ~11.5 hrs · BA or Virgin Atlantic</span>
+    <span class="route-arrow">→</span>
+    <span class="route-city">🇭🇷 Split, Croatia</span>
+    <span class="route-tag">Direct · ~2h 40m · easyJet / Wizz Air</span>
+    <span class="route-arrow">→</span>
+    <span class="route-city">🇿🇦 JNB</span>
+    <span class="route-tag">Via London Heathrow</span>
+  </div>
+
+  <div class="dest-split">
+    <div class="dest-card london">
+      <div class="dc-label">Leg 1 · Fri 4 – Mon 7 July</div>
+      <h3>London</h3>
+      <p>Your European starting point — world-class museums, iconic landmarks, free accommodation with friends or family.</p>
+      <div class="dc-stat">4 nights</div>
+      <div class="dc-stat-label">Free accommodation · 3 full days exploring</div>
+    </div>
+    <div class="dest-card croatia">
+      <div class="dc-label">Leg 2 · Tue 8 – Sun 20 July</div>
+      <h3>Split & Dalmatian Coast</h3>
+      <p>Croatia's most spectacular stretch — Roman ruins, island beaches, Adriatic sunsets, and Zlatni Rat on Brač.</p>
+      <div class="dc-stat">12 nights</div>
+      <div class="dc-stat-label">Split base · Brač island · 3 weekends</div>
+    </div>
+  </div>
+
+  <div class="guide-block">
+    <h3>Why this route works</h3>
+    <ul class="tip-list">
+      <li><strong>Free London bed</strong>saves R7,000–10,000 vs booking a hotel, bringing the whole trip to R21–30k per person.</li>
+      <li><strong>Direct flights</strong>both ways — JNB to Heathrow direct with BA or Virgin, then London to Split direct with easyJet or Wizz Air. No layovers.</li>
+      <li><strong>3 full weekends</strong>by taking 10 days leave (Fri 4 Jul to Mon 14 Jul), you get 16 consecutive days including weekends of 5–6, 12–13 and 19–20 July.</li>
+      <li><strong>London as hub</strong>means you fly home London→JNB which is the most direct and cheapest routing back. You can even book Split→London→JNB as one BA ticket.</li>
+      <li><strong>Budget-friendly Croatia</strong>Split is a great base — cheap konoba restaurants, free Diocletian's Palace, and islands Brač and Hvar a short ferry away.</li>
+    </ul>
+  </div>
+
+  <div class="tips-block">
+    <h3>Action checklist — do these now</h3>
+    <ul class="tip-list">
+      <li><strong>Book JNB–London flights</strong>July is peak — British Airways and Virgin Atlantic direct. Book immediately, prices rise weekly.</li>
+      <li><strong>Book London–Split flight</strong>easyJet from Gatwick or Wizz Air from Luton. Mid-week (Tue/Wed) is cheaper.</li>
+      <li><strong>Apply for UK visa</strong>Requires a TB test first — allow 6–8 weeks minimum. Start by early May.</li>
+      <li><strong>Apply for Schengen visa</strong>Croatia is Schengen. €80 per person via VFS Global in Johannesburg. Also allow 6–8 weeks.</li>
+      <li><strong>Book Croatia accommodation</strong>July is peak season — Split apartments and Brač (Bol) accommodation sells out. Book 3–4 months ahead.</li>
+      <li><strong>Get travel insurance</strong>Required for both visas. Must cover €30,000 medical minimum for Schengen. Get this before applying for visas.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ITINERARY -->
+<div id="itinerary" class="panel">
+  <div class="section-head">
+    <div class="section-icon" style="background:#EEF2FF;">📅</div>
+    <div>
+      <h2>Day-by-day itinerary</h2>
+      <p>Fri 4 July – Sun 20 July 2026 · 16 nights · 10 days leave taken</p>
+    </div>
+  </div>
+
+  <div class="timeline">
+
+    <div class="tl-row">
+      <div class="tl-left">
+        <div class="tl-date">Fri 4 Jul</div>
+        <div class="tl-day">Day 1</div>
+      </div>
+      <div class="tl-spine">
+        <div class="tl-dot" style="color: #3B4DB8;"></div>
+        <div class="tl-line"></div>
+      </div>
+      <div class="tl-card">
+        <h3>Fly JNB → London Heathrow</h3>
+        <p>Depart Johannesburg OR Tambo. British Airways or Virgin Atlantic fly direct to London Heathrow in ~11 hrs 20 min. Evening departure recommended — arrive London Saturday morning fresh for the weekend.</p>
+        <div class="tl-tags">
+          <span class="tag tag-flight">Direct flight ~11.5h</span>
+          <span class="tag tag-london">BA / Virgin Atlantic</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-row">
+      <div class="tl-left">
+        <div class="tl-date">Sat–Sun</div>
+        <div class="tl-day">Days 2–3 · Wknd 1</div>
+      </div>
+      <div class="tl-spine">
+        <div class="tl-dot" style="color: #1B4B73;"></div>
+        <div class="tl-line"></div>
+      </div>
+      <div class="tl-card">
+        <h3>London — Weekend exploring</h3>
+        <p>Hit the highlights: Southbank walk from Tower Bridge to London Eye, Borough Market for lunch, British Museum, Tate Modern (both free). Saturday evening: West End show or live music. Sunday: Hyde Park, Changing of the Guard at Buckingham Palace (daily in July), Portobello Market in Notting Hill.</p>
+        <div class="tl-tags">
+          <span class="tag tag-london">London</span>
+          <span class="tag tag-wknd">Weekend 1</span>
+          <span class="tag tag-free">Mostly free</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-row">
+      <div class="tl-left">
+        <div class="tl-date">Mon 7 Jul</div>
+        <div class="tl-day">Day 4</div>
+      </div>
+      <div class="tl-spine">
+        <div class="tl-dot" style="color: #1B4B73;"></div>
+        <div class="tl-line"></div>
+      </div>
+      <div class="tl-card">
+        <h3>London — Day trip or deeper exploration</h3>
+        <p>Options: Day trip to Windsor Castle (40 min train, ~£28 entry) — castle, Crown Jewels, Long Walk. Or explore South Kensington's museum cluster (Natural History Museum, V&A, Science Museum — all free). Evening: farewell dinner, pack for Croatia.</p>
+        <div class="tl-tags">
+          <span class="tag tag-london">London</span>
+          <span class="tag tag-free">Free museums</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-row">
+      <div class="tl-left">
+        <div class="tl-date">Tue 8 Jul</div>
+        <div class="tl-day">Day 5</div>
+      </div>
+      <div class="tl-spine">
+        <div class="tl-dot" style="color: #3B4DB8;"></div>
+        <div class="tl-line"></div>
+      </div>
+      <div class="tl-card">
+        <h3>London → Split, Croatia</h3>
+        <p>Morning budget flight from Gatwick (easyJet) or Luton (Wizz Air) to Split Airport. ~2h 40m flight. Arrive Split early afternoon — check into Old Town apartment, walk Diocletian's Palace, first evening on the Riva waterfront promenade. Dinner at a konoba.</p>
+        <div class="tl-tags">
+          <span class="tag tag-flight">~2h 40m · easyJet or Wizz Air</span>
+          <span class="tag tag-croatia">Arrive Split</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-row">
+      <div class="tl-left">
+        <div class="tl-date">Wed–Thu</div>
+        <div class="tl-day">Days 6–7</div>
+      </div>
+      <div class="tl-spine">
+        <div class="tl-dot" style="color: #C7522A;"></div>
+        <div class="tl-line"></div>
+      </div>
+      <div class="tl-card">
+        <h3>Split — Explore the city</h3>
+        <p>Diocletian's Palace (free to wander — it's a living neighbourhood). Climb St Duje's bell tower for views. Marjan Hill forest park sunset walk. Swim at Bačvice beach — famous for the local game picigin. Evening: old town bars and restaurant-hopping on Dosud street.</p>
+        <div class="tl-tags">
+          <span class="tag tag-croatia">Split</span>
+          <span class="tag tag-beach">Beach</span>
+          <span class="tag tag-free">Palace free entry</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-row">
+      <div class="tl-left">
+        <div class="tl-date">Fri 11 Jul</div>
+        <div class="tl-day">Day 8</div>
+      </div>
+      <div class="tl-spine">
+        <div class="tl-dot" style="color: #C7522A;"></div>
+        <div class="tl-line"></div>
+      </div>
+      <div class="tl-card">
+        <h3>Day trip — Trogir</h3>
+        <p>30-min bus ride from Split (bus 37, ~€2). UNESCO-listed old town on a tiny island connected by bridges. Wander medieval walls, the Cathedral of St Lawrence, and the waterfront. Back in Split for dinner. Alternatively: Omiš, a pirate town at the mouth of the Cetina canyon, equally beautiful.</p>
+        <div class="tl-tags">
+          <span class="tag tag-croatia">Trogir day trip</span>
+          <span class="tag tag-free">UNESCO site</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-row">
+      <div class="tl-left">
+        <div class="tl-date">Sat–Sun</div>
+        <div class="tl-day">Days 9–10 · Wknd 2</div>
+      </div>
+      <div class="tl-spine">
+        <div class="tl-dot" style="color: #2D6A4F;"></div>
+        <div class="tl-line"></div>
+      </div>
+      <div class="tl-card">
+        <h3>Brač Island — Zlatni Rat beach</h3>
+        <p>Ferry Split → Supetar (~50 min, ~€5 foot passenger). Bus to Bol on the south coast. Zlatni Rat (Golden Horn) — Croatia's most photographed beach, a shifting pebble spit into turquoise water. Stay 2 nights in Bol. Windsurf, kayak, or just lie in the sun. Return to Split Monday morning.</p>
+        <div class="tl-tags">
+          <span class="tag tag-island">Brač Island</span>
+          <span class="tag tag-beach">Zlatni Rat</span>
+          <span class="tag tag-wknd">Weekend 2</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-row">
+      <div class="tl-left">
+        <div class="tl-date">Mon 14 Jul</div>
+        <div class="tl-day">Day 11</div>
+      </div>
+      <div class="tl-spine">
+        <div class="tl-dot" style="color: #C7522A;"></div>
+        <div class="tl-line"></div>
+      </div>
+      <div class="tl-card">
+        <h3>Back to Split — rest day</h3>
+        <p>Ferry back from Supetar to Split. Relax, recharge. Swim at Kasjuni beach (west of Marjan Hill — locals' favourite, far quieter than Bačvice). Evening aperitivo on the Riva watching boats come in.</p>
+        <div class="tl-tags">
+          <span class="tag tag-croatia">Split</span>
+          <span class="tag tag-beach">Rest day</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-row">
+      <div class="tl-left">
+        <div class="tl-date">Tue 15 Jul</div>
+        <div class="tl-day">Day 12</div>
+      </div>
+      <div class="tl-spine">
+        <div class="tl-dot" style="color: #C7522A;"></div>
+        <div class="tl-line"></div>
+      </div>
+      <div class="tl-card">
+        <h3>Day trip — Krka National Park</h3>
+        <p>Bus from Split to Šibenik (~2h, ~€7), then shuttle to Krka (~€7 entry). Waterfalls, emerald swimming holes, and pine forests. One of Croatia's most spectacular natural sights. Back to Split by evening — well worth the full day.</p>
+        <div class="tl-tags">
+          <span class="tag tag-croatia">Krka waterfalls</span>
+          <span class="tag tag-beach">Swimming</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-row">
+      <div class="tl-left">
+        <div class="tl-date">Wed–Thu</div>
+        <div class="tl-day">Days 13–14</div>
+      </div>
+      <div class="tl-spine">
+        <div class="tl-dot" style="color: #C7522A;"></div>
+        <div class="tl-line"></div>
+      </div>
+      <div class="tl-card">
+        <h3>Split — Free days & local life</h3>
+        <p>Slow mornings at a café, fresh fish at the daily market under Diocletian's cellars. Browse the Green Market (Pazar). Swim at Kašjuni or take the bus up the coast to Stobreč. Stock up on local olive oil and wine. These slower days are some of the best of the trip.</p>
+        <div class="tl-tags">
+          <span class="tag tag-croatia">Split</span>
+          <span class="tag tag-free">Local life</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-row">
+      <div class="tl-left">
+        <div class="tl-date">Fri 18 Jul</div>
+        <div class="tl-day">Day 15</div>
+      </div>
+      <div class="tl-spine">
+        <div class="tl-dot" style="color: #2D6A4F;"></div>
+        <div class="tl-line"></div>
+      </div>
+      <div class="tl-card">
+        <h3>Hvar day trip or Vis Island</h3>
+        <p>Catamaran to Hvar Town (~1h, ~€12). Walk the Venetian fortress, marble streets, and famous main square. Go for the day only — overnight stays are pricey. Alternatively, catch the catamaran to Vis (~2h) for a quieter, less-touristy, incredibly beautiful island with a navy of bays and lavender fields.</p>
+        <div class="tl-tags">
+          <span class="tag tag-island">Hvar or Vis</span>
+          <span class="tag tag-beach">Day trip</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-row">
+      <div class="tl-left">
+        <div class="tl-date">Sat–Sun</div>
+        <div class="tl-day">Days 15–16 · Wknd 3</div>
+      </div>
+      <div class="tl-spine">
+        <div class="tl-dot" style="color: #C7522A;"></div>
+        <div class="tl-line"></div>
+      </div>
+      <div class="tl-card">
+        <h3>Final Split weekend</h3>
+        <p>Saturday: Split Summer Festival events, evening on the Riva. Sunday: early morning Split → London flight. Pack light Croatian wine and olive oil. Fly Split→Heathrow→JNB — either as two bookings or one BA codeshare ticket. Back in Johannesburg Monday 21 July.</p>
+        <div class="tl-tags">
+          <span class="tag tag-wknd">Weekend 3</span>
+          <span class="tag tag-flight">Fly home Sun 20 Jul</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- LONDON GUIDE -->
+<div id="london" class="panel">
+  <div class="section-head">
+    <div class="section-icon" style="background: var(--london-light);">🇬🇧</div>
+    <div>
+      <h2>London guide</h2>
+      <p>4 nights · Fri 4 – Mon 7 July · Free accommodation</p>
+    </div>
+  </div>
+
+  <div class="guide-block">
+    <h3>Free things — and London has the world's best</h3>
+    <div class="item-grid">
+      <div class="item-card">
+        <div class="ic-title">British Museum <span class="ic-free">Free</span></div>
+        <div class="ic-desc">8 million artefacts including the Rosetta Stone and Elgin Marbles. Book a timed entry online — it fills up in summer.</div>
+      </div>
+      <div class="item-card">
+        <div class="ic-title">Tate Modern <span class="ic-free">Free</span></div>
+        <div class="ic-desc">Picasso, Pollock, Warhol in a converted Bankside power station. The Turbine Hall alone is worth the visit.</div>
+      </div>
+      <div class="item-card">
+        <div class="ic-title">Natural History Museum <span class="ic-free">Free</span></div>
+        <div class="ic-desc">Dinosaurs, space, wildlife — world-class. Walk with the V&A and Science Museum next door for a full South Kensington day.</div>
+      </div>
+      <div class="item-card">
+        <div class="ic-title">National Gallery <span class="ic-free">Free</span></div>
+        <div class="ic-desc">Da Vinci, Turner, Van Gogh, Monet. One of the world's finest collections. On Trafalgar Square.</div>
+      </div>
+      <div class="item-card">
+        <div class="ic-title">Southbank Walk <span class="ic-free">Free</span></div>
+        <div class="ic-desc">Walk from Tower Bridge to the London Eye along the Thames. Street food stalls, buskers, the Globe Theatre, and the best skyline views in London.</div>
+      </div>
+      <div class="item-card">
+        <div class="ic-title">Changing of the Guard <span class="ic-free">Free</span></div>
+        <div class="ic-desc">Buckingham Palace — daily in July. Arrive 30 minutes early. Also happens at St James's Palace (less crowded).</div>
+      </div>
+      <div class="item-card">
+        <div class="ic-title">Hyde Park <span class="ic-free">Free</span></div>
+        <div class="ic-desc">340 acres. Deckchairs on the Serpentine in July. Speakers' Corner is wild on Sundays. Connects to Kensington Gardens.</div>
+      </div>
+      <div class="item-card">
+        <div class="ic-title">Borough Market <span class="ic-free">Free entry</span></div>
+        <div class="ic-desc">London's oldest food market near London Bridge. Graze for lunch for under £10. Busiest on Saturdays — go early.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="guide-block">
+    <h3>Worth paying for</h3>
+    <div class="item-grid">
+      <div class="item-card">
+        <div class="ic-title">Tower of London <span class="ic-paid">~£30pp</span></div>
+        <div class="ic-desc">Crown Jewels, Beefeaters, 1,000 years of history. Book tickets online in advance — sells out in July.</div>
+      </div>
+      <div class="item-card">
+        <div class="ic-title">West End show <span class="ic-paid">£25–90pp</span></div>
+        <div class="ic-desc">Hamilton, The Lion King, Phantom. Budget tickets via TodayTix app or day-of lottery. Check TKTS booth in Leicester Square for same-day discounts.</div>
+      </div>
+      <div class="item-card">
+        <div class="ic-title">The Shard view <span class="ic-paid">~£32pp</span></div>
+        <div class="ic-desc">Best skyline views in London. Book dusk slot (cheaper than peak) — the light is incredible at 8–9pm in July.</div>
+      </div>
+      <div class="item-card">
+        <div class="ic-title">Windsor Castle day trip <span class="ic-paid">£28 entry + ~£20 return train</span></div>
+        <div class="ic-desc">40 min from Paddington or Waterloo. Castle, St George's Chapel, Long Walk. A brilliant full day out of the city.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="guide-block">
+    <h3>Getting around</h3>
+    <ul class="tip-list">
+      <li><strong>Oyster / contactless</strong>Tap in and out everywhere. A daily cap applies so you never overpay. Zones 1–2 cap is ~£8.50. Use your SA bank card directly — contactless works exactly like Oyster.</li>
+      <li><strong>Heathrow into London</strong>Take the Elizabeth Line (Tube) — ~£6, about 45 min to central London. Avoid the Heathrow Express (~£25) unless time is critical.</li>
+      <li><strong>Bus 11</strong>Unofficial free sightseeing tour. Runs past St Paul's Cathedral, Fleet Street, Trafalgar Square, Houses of Parliament, Westminster Abbey. £1.75 flat fare.</li>
+      <li><strong>Walk</strong>Central London is very compact. Tower Bridge to Tate Modern is 10 min on foot. Hyde Park to the Natural History Museum is 20 min. Walk first, tube second.</li>
+      <li><strong>Gatwick to London</strong>For your London–Split flight, get to Gatwick via Thameslink from King's Cross or St Pancras — ~£10–17, avoids the expensive Gatwick Express.</li>
+    </ul>
+  </div>
+
+  <div class="guide-block">
+    <h3>Eating on a budget</h3>
+    <ul class="tip-list">
+      <li><strong>Eat at home where possible</strong>Since accommodation is free, cooking some meals saves significantly. A Tesco or Sainsbury's shop is straightforward and cheap.</li>
+      <li><strong>Pub lunch</strong>Most pubs serve hearty food (pies, fish & chips, burgers) for £10–14. Far better value than sit-down restaurants and very atmospheric.</li>
+      <li><strong>Street food markets</strong>Borough Market, Maltby Street, Deptford Market Yard — brilliant food for £5–10. July weather means eating outside is ideal.</li>
+      <li><strong>Pret a Manger / M&S Simply Food</strong>For breakfast and grab-and-go lunches. Fresh sandwiches and salads for £4–6. Far better than tourist cafés near landmarks.</li>
+      <li><strong>Avoid restaurant rows near landmarks</strong>Anywhere on the South Bank facing the Thames, around Covent Garden piazza, or near Tower Bridge doubles prices. Walk two streets back.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- CROATIA GUIDE -->
+<div id="croatia" class="panel">
+  <div class="section-head">
+    <div class="section-icon" style="background: var(--croatia-light);">🇭🇷</div>
+    <div>
+      <h2>Croatia guide</h2>
+      <p>12 nights · Tue 8 – Sun 20 July · Split base + islands</p>
+    </div>
+  </div>
+
+  <div class="guide-block">
+    <h3>Split — your Dalmatian base</h3>
+    <div class="item-grid">
+      <div class="item-card">
+        <div class="ic-title">Diocletian's Palace <span class="ic-free">Free</span></div>
+        <div class="ic-desc">A Roman emperor's retirement palace that became an entire city. Wander the cellars, peristyle square, and ancient alleyways — people live and work inside.</div>
+      </div>
+      <div class="item-card">
+        <div class="ic-title">Marjan Hill <span class="ic-free">Free</span></div>
+        <div class="ic-desc">Forested peninsula above the city. Walk up for panoramic views of Split and the islands. Best at sunset. 30 min from Old Town on foot.</div>
+      </div>
+      <div class="item-card">
+        <div class="ic-title">Bačvice Beach <span class="ic-free">Free</span></div>
+        <div class="ic-desc">The city beach right below the Old Town. Famous for picigin — a local water sport. Shallow, sandy (unusual for Croatia), and lively.</div>
+      </div>
+      <div class="item-card">
+        <div class="ic-title">Kasjuni Beach <span class="ic-free">Free</span></div>
+        <div class="ic-desc">Locals' favourite — pebble beach on the western side of Marjan Hill. Clearer water, less crowded than Bačvice. 20 min walk from Old Town.</div>
+      </div>
+      <div class="item-card">
+        <div class="ic-title">The Green Market <span class="ic-free">Free</span></div>
+        <div class="ic-desc">Daily market just outside the Palace walls. Fresh local produce, fish, olive oil and cheese. The best place to stock a picnic and meet locals.</div>
+      </div>
+      <div class="item-card">
+        <div class="ic-title">The Riva Promenade <span class="ic-free">Free</span></div>
+        <div class="ic-desc">Split's waterfront boulevard. The place to watch boats, drink coffee, and do absolutely nothing. Magical at sunset and late at night.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="guide-block">
+    <h3>Day trips from Split</h3>
+    <div class="item-grid">
+      <div class="item-card">
+        <div class="ic-title">Trogir <span class="ic-paid">Bus ~€2 · 30 min</span></div>
+        <div class="ic-desc">UNESCO-listed medieval town on an island connected by bridges. Free to wander. Cathedral has an entry fee (~€3). Easy half-day.</div>
+      </div>
+      <div class="item-card">
+        <div class="ic-title">Krka National Park <span class="ic-paid">~€7 entry · ~2h bus</span></div>
+        <div class="ic-desc">Cascading waterfalls and swimming holes surrounded by forest. A full day — go early to beat crowds. One of Croatia's best natural sights.</div>
+      </div>
+      <div class="item-card">
+        <div class="ic-title">Omiš <span class="ic-paid">Bus ~€3 · 40 min</span></div>
+        <div class="ic-desc">Pirate town at the mouth of the Cetina River canyon. Beach, fortress ruins, and river rafting available. Dramatic scenery.</div>
+      </div>
+      <div class="item-card">
+        <div class="ic-title">Hvar (day trip) <span class="ic-paid">Catamaran ~€12 · 1h</span></div>
+        <div class="ic-desc">Croatia's glamour island — go for the day. Beautiful Venetian town centre and fortress views. Skip overnight stays (expensive). Last catamaran back ~10pm.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="guide-block">
+    <h3>Brač Island — Zlatni Rat weekend</h3>
+    <ul class="tip-list">
+      <li><strong>Getting there</strong>Car ferry Split → Supetar: ~50 min, ~€5 as a foot passenger. Runs frequently in July. Catamaran is faster but pricier.</li>
+      <li><strong>Supetar vs Bol</strong>Stay in Bol on the south coast for Zlatni Rat beach. Supetar on the north is charming but further from the best beach. Bus runs between them (~40 min, ~€3).</li>
+      <li><strong>Zlatni Rat</strong>Croatia's most iconic beach — a pebble spit that shifts shape with tides and wind. Crystal clear water, pine shade. Get there early in July to claim a good spot.</li>
+      <li><strong>Windsurfing</strong>Bol is one of Europe's best windsurfing spots thanks to the maestral wind. Lessons and equipment rental from Big Blue Sport (~€50 for a session).</li>
+      <li><strong>Eating in Bol</strong>Plenty of good konobas serving fresh fish. Grilled sea bass or dourade with vegetables for ~€15–18pp. Wine is local and cheap — around €4 a glass.</li>
+    </ul>
+  </div>
+
+  <div class="guide-block">
+    <h3>Eating & drinking in Croatia</h3>
+    <ul class="tip-list">
+      <li><strong>Eat at a konoba</strong>Family-run taverns inland or on back streets — always cheaper and better than waterfront restaurants. A full meal with wine: €15–22pp.</li>
+      <li><strong>Avoid the Riva terraces</strong>Sitting with a sea view in Split adds 30–50% to the bill. Walk two streets back for the same food at half the price.</li>
+      <li><strong>Lunch menus (ručak)</strong>Many restaurants offer a fixed-price lunch: starter, main and drink for €10–13. The best value eating in Croatia.</li>
+      <li><strong>Local wine</strong>Plavac Mali (red) and Pošip (white) are Croatia's best. A bottle from a local shop: €5–8. Order by the glass at konobas.</li>
+      <li><strong>Market breakfast</strong>Fresh bread, local cheese and tomatoes from the Green Market for €2–3. Far better than a café breakfast.</li>
+    </ul>
+  </div>
+
+  <div class="guide-block">
+    <h3>Practical Croatia tips</h3>
+    <ul class="tip-list">
+      <li><strong>Currency</strong>Croatia uses the Euro (€) since Jan 2023. No currency exchange needed if coming from London.</li>
+      <li><strong>Ferries</strong>Book Jadrolinija car ferries online in advance for July — foot passengers rarely need to book but car ferries sell out. Never bring a car to an island unnecessarily.</li>
+      <li><strong>Accommodation</strong>Airbnb apartments in Split Old Town (10–15 min walk to Riva) offer best value. Look for places with air conditioning — July nights are warm. Book at least 3–4 months ahead.</li>
+      <li><strong>Sun & heat</strong>July in Split: 30–33°C daily. Carry water everywhere. Avoid intense midday sun. Most activity is done morning or evening — afternoons are for the beach or a nap.</li>
+      <li><strong>Beaches</strong>Almost all Croatian beaches are pebble or rock — not sand. Water shoes help enormously. Bring or buy a pair before heading to the islands.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- BUDGET -->
+<div id="budget" class="panel">
+  <div class="section-head">
+    <div class="section-icon" style="background:#FDF3E3;">💰</div>
+    <div>
+      <h2>Budget breakdown</h2>
+      <p>Per couple · 16 nights · Free London accommodation included</p>
+    </div>
+  </div>
+
+  <div class="per-person-card">
+    <div>
+      <div class="ppc-label">Estimated cost per person</div>
+      <div class="ppc-range">R21,500 – R30,000</div>
+      <div class="ppc-check">✓ Well within your R35,000–R50,000 per person budget</div>
+    </div>
+    <div style="text-align:right;">
+      <div style="font-size:12px;color:rgba(26,22,20,0.6);margin-bottom:4px;">Savings from free London bed</div>
+      <div style="font-size:22px;font-weight:700;color:var(--ink);">R7–10k saved</div>
+      <div style="font-size:11px;color:rgba(26,22,20,0.5);">vs booking a London hotel</div>
+    </div>
+  </div>
+
+  <div class="budget-grid-2">
+    <div class="bg2-card">
+      <div class="bg2-label">JNB ↔ London (direct)</div>
+      <div class="bg2-amount">R22,000–28,000</div>
+      <div class="bg2-note">Per couple. BA or Virgin Atlantic. Book immediately — July prices rise weekly.</div>
+    </div>
+    <div class="bg2-card free-card">
+      <div class="bg2-label">London accommodation (4 nights) <span class="free-badge">FREE</span></div>
+      <div class="bg2-amount">R0</div>
+      <div class="bg2-note">Staying with friends/family. Saves ~R7,000–10,000 vs Premier Inn.</div>
+    </div>
+    <div class="bg2-card">
+      <div class="bg2-label">London → Split flight</div>
+      <div class="bg2-amount">R1,500–3,000</div>
+      <div class="bg2-note">Per couple. easyJet / Wizz Air. Book Tue or Wed — cheapest mid-week.</div>
+    </div>
+    <div class="bg2-card">
+      <div class="bg2-label">Croatia accommodation (12 nights)</div>
+      <div class="bg2-amount">R11,000–15,000</div>
+      <div class="bg2-note">Per couple. Airbnb apartments in Split + 2 nights Bol on Brač. Book early.</div>
+    </div>
+    <div class="bg2-card">
+      <div class="bg2-label">London food & activities</div>
+      <div class="bg2-amount">R3,000–5,000</div>
+      <div class="bg2-note">Per couple. Free museums + Borough Market + 1–2 paid attractions (Tower of London, West End show).</div>
+    </div>
+    <div class="bg2-card">
+      <div class="bg2-label">Croatia food, ferries & day trips</div>
+      <div class="bg2-amount">R6,000–9,000</div>
+      <div class="bg2-note">Per couple. Konoba meals ~€18–30/couple, ferries ~€5–12, Krka & Trogir day trips.</div>
+    </div>
+  </div>
+
+  <div class="budget-summary">
+    <h3>Full trip cost — per couple</h3>
+    <div class="budget-rows">
+      <div class="budget-row-item">
+        <span class="bri-label">Flights (JNB ↔ London + London ↔ Split)</span>
+        <span class="bri-amount">R23,500–31,000</span>
+      </div>
+      <div class="budget-row-item">
+        <span class="bri-label">London accommodation</span>
+        <span class="bri-amount free-item">R0 — Free ✓</span>
+      </div>
+      <div class="budget-row-item">
+        <span class="bri-label">Croatia accommodation (12 nights)</span>
+        <span class="bri-amount">R11,000–15,000</span>
+      </div>
+      <div class="budget-row-item">
+        <span class="bri-label">London food & activities</span>
+        <span class="bri-amount">R3,000–5,000</span>
+      </div>
+      <div class="budget-row-item">
+        <span class="bri-label">Croatia food, ferries & day trips</span>
+        <span class="bri-amount">R6,000–9,000</span>
+      </div>
+      <div class="budget-row-item">
+        <span class="bri-label">Visa fees (UK + Schengen × 2 people)</span>
+        <span class="bri-amount">R8,500–10,000</span>
+      </div>
+      <div class="budget-row-item">
+        <span class="bri-label">Travel insurance (both destinations)</span>
+        <span class="bri-amount">R1,500–2,500</span>
+      </div>
+    </div>
+    <div class="budget-total">
+      <span class="bt-label">Total — per couple</span>
+      <span class="bt-amount">R53,500–72,500</span>
+    </div>
+  </div>
+
+  <div class="tips-block">
+    <h3>Money-saving moves</h3>
+    <ul class="tip-list">
+      <li><strong>Extend London time</strong>Since the bed is free, every extra London night costs you almost nothing. Adding a 5th night costs roughly just food + Oyster card (~R400pp/day).</li>
+      <li><strong>Book Split accommodation now</strong>July is peak season — apartments in Split Old Town go fast. Locking in early can save 20–30% on Airbnb vs leaving it to May/June.</li>
+      <li><strong>Fly Split→London→JNB on one BA ticket</strong>British Airways operates Split–Heathrow–JNB as a codeshare. Booking this as one itinerary is often cheaper than two separate bookings and gives you full check-through baggage.</li>
+      <li><strong>Skip Hvar overnight</strong>Hvar is Croatia's most expensive island for accommodation. A day trip from Split by catamaran costs ~€12 return and lets you see all the key sights without the hotel premium.</li>
+      <li><strong>Eat at lunch menus in Croatia</strong>Fixed-price lunch menus (starter + main + drink) cost €10–13pp — saving significantly vs à la carte dinner prices at the same restaurant.</li>
+      <li><strong>Foot passenger only on ferries</strong>Never take a hire car to the islands — it costs 4× more on the ferry and you don't need it. Bus networks on Brač and Hvar cover the main beaches easily.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- VISAS -->
+<div id="visas" class="panel">
+  <div class="section-head">
+    <div class="section-icon" style="background:#FFF8E6;">🛂</div>
+    <div>
+      <h2>Visas & admin</h2>
+      <p>Two separate visas required — start immediately for July travel</p>
+    </div>
+  </div>
+
+  <div class="warn-box" style="margin-bottom:24px;">
+    ⚠ <strong>Critical:</strong> The UK is NOT part of the Schengen Area. You need two completely separate visa applications — a UK Standard Visitor Visa AND a Schengen C Visa (which covers Croatia). Apply for both simultaneously, at least 8 weeks before travel. For July, this means starting both applications <strong>by early May at the absolute latest</strong>.
+  </div>
+
+  <div class="visa-card">
+    <div class="vc-header">
+      <span class="vc-flag">🇬🇧</span>
+      <div>
+        <div class="vc-title">UK Standard Visitor Visa</div>
+        <div class="vc-sub">Required for all South African passport holders</div>
+      </div>
+    </div>
+    <div class="vc-grid">
+      <div class="vc-item">
+        <div class="vc-item-label">Visa fee</div>
+        <div class="vc-item-val">~£115 (~R2,700) per person</div>
+      </div>
+      <div class="vc-item">
+        <div class="vc-item-label">Processing time</div>
+        <div class="vc-item-val">3–4 weeks (apply 8 weeks ahead)</div>
+      </div>
+      <div class="vc-item">
+        <div class="vc-item-label">Where to apply</div>
+        <div class="vc-item-val">Online then VFS Global in JHB, Pretoria, Durban or Cape Town</div>
+      </div>
+      <div class="vc-item">
+        <div class="vc-item-label">TB test required</div>
+        <div class="vc-item-val">Yes — approved clinic in SA. Book this first (adds 1–2 weeks).</div>
+      </div>
+    </div>
+    <div style="margin-top:14px;">
+      <div class="vc-item-label" style="margin-bottom:8px;">Documents needed</div>
+      <ul class="tip-list">
+        <li><strong>Passport</strong>Valid 6+ months beyond your return date. At least 1 blank page.</li>
+        <li><strong>Bank statements</strong>3–6 months showing sufficient funds (~R5,000+/month recommended).</li>
+        <li><strong>Employment letter</strong>From your employer confirming position, salary, leave approval and intention to return.</li>
+        <li><strong>Accommodation proof</strong>Address of where you're staying in London (your friend/family's address + a letter from them).</li>
+        <li><strong>Travel itinerary</strong>Flights booked (or confirmed), rough day-by-day plan. Doesn't need to be exact.</li>
+        <li><strong>Travel insurance</strong>Policy document showing medical cover for the UK period.</li>
+        <li><strong>TB test certificate</strong>From an approved UKVI tuberculosis testing clinic in South Africa.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="visa-card">
+    <div class="vc-header">
+      <span class="vc-flag">🇭🇷</span>
+      <div>
+        <div class="vc-title">Schengen C Visa — covers Croatia</div>
+        <div class="vc-sub">Croatia joined Schengen in January 2023. One visa covers all 29 countries.</div>
+      </div>
+    </div>
+    <div class="vc-grid">
+      <div class="vc-item">
+        <div class="vc-item-label">Visa fee</div>
+        <div class="vc-item-val">€80 (~R1,500) per person</div>
+      </div>
+      <div class="vc-item">
+        <div class="vc-item-label">Processing time</div>
+        <div class="vc-item-val">2–4 weeks (apply 8 weeks ahead)</div>
+      </div>
+      <div class="vc-item">
+        <div class="vc-item-label">Where to apply</div>
+        <div class="vc-item-val">VFS Global Johannesburg — Croatian consulate (or Italian if 4+ days in Italy)</div>
+      </div>
+      <div class="vc-item">
+        <div class="vc-item-label">Insurance required</div>
+        <div class="vc-item-val">Yes — minimum €30,000 medical cover, valid entire Schengen stay</div>
+      </div>
+    </div>
+    <div style="margin-top:14px;">
+      <div class="vc-item-label" style="margin-bottom:8px;">Documents needed</div>
+      <ul class="tip-list">
+        <li><strong>Passport</strong>Issued within last 10 years, valid 3+ months after your return date, at least 2 blank pages.</li>
+        <li><strong>Travel insurance</strong>€30,000 minimum medical cover, valid for entire Schengen stay. Must be in your name.</li>
+        <li><strong>Bank statements</strong>3–6 months. Must show ability to fund your stay (roughly €50–100/day).</li>
+        <li><strong>Employment letter</strong>Position, salary, leave approval and intention to return to South Africa.</li>
+        <li><strong>Accommodation bookings</strong>Proof of your Croatia hotel/apartment bookings for each night.</li>
+        <li><strong>Return flight itinerary</strong>Proof of onward travel out of the Schengen Area (your Split→London→JNB tickets).</li>
+        <li><strong>Passport photo</strong>35×45mm, white background, taken within last 3 months.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="tips-block">
+    <h3>Visa timeline — what to do and when</h3>
+    <ul class="tip-list">
+      <li><strong>Now (March)</strong>Book all flights. Get travel insurance. Start gathering bank statements and employment letter.</li>
+      <li><strong>April (weeks 1–2)</strong>Book TB test at approved UK visa clinic (find list on gov.uk). Book VFS appointments for both UK and Croatian visas.</li>
+      <li><strong>April (weeks 3–4)</strong>Attend TB test. Book all Croatia accommodation — needed for Schengen application. Prepare full document packs for both applications.</li>
+      <li><strong>Early May</strong>Submit UK visa application (with TB certificate). Submit Croatian Schengen application. Both should be in no later than 8 weeks before 4 July.</li>
+      <li><strong>May–June</strong>Wait for approvals. Chase if no response after 3 weeks. Book remaining activities (West End show, Tower of London).</li>
+      <li><strong>July 4</strong>Fly. Have both visa approvals, passport, insurance docs, and accommodation confirmations in your carry-on or phone.</li>
+    </ul>
+  </div>
+</div>
+
+<script>
+  function showPanel(id) {
+    document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    event.target.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+</body>
+</html>
