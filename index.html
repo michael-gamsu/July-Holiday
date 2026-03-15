@@ -145,7 +145,10 @@
     letter-spacing: 0.02em;
   }
   .nav-btn.active { color: var(--ink); border-bottom-color: var(--ink); font-weight: 500; }
-  .nav-btn:hover:not(.active) { color: var(--ink); }
+  .nav-btn:hover:not(.active) { color: var(--ink); background: rgba(0,0,0,0.03); }
+  .nav-btn:focus-visible { outline: 2px solid var(--london); outline-offset: -2px; border-radius: 4px; }
+  .nav::-webkit-scrollbar { display: none; }
+  .nav { scrollbar-width: none; }
 
   /* PANELS */
   .panel { display: none; padding: 40px; max-width: 900px; margin: 0 auto; }
@@ -233,8 +236,9 @@
     padding: 22px;
     border: 1px solid var(--border);
   }
-  .dest-card.london { background: var(--london); color: var(--cream); }
-  .dest-card.croatia { background: var(--croatia); color: var(--cream); }
+  .dest-card.london { background: var(--london); color: var(--cream); transition: transform 0.18s, box-shadow 0.18s; }
+  .dest-card.croatia { background: var(--croatia); color: var(--cream); transition: transform 0.18s, box-shadow 0.18s; }
+  .dest-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.12); }
   .dest-card .dc-label { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.7; margin-bottom: 8px; }
   .dest-card h3 { font-family: 'Playfair Display', serif; font-size: 20px; margin-bottom: 4px; }
   .dest-card p { font-size: 12px; opacity: 0.8; line-height: 1.5; }
@@ -391,15 +395,47 @@
     margin-bottom: 14px;
   }
 
-  /* RESPONSIVE */
+  /* PANEL TRANSITION */
+  @keyframes panelFadeIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .panel.active { animation: panelFadeIn 0.22s ease both; }
+
+  /* RESPONSIVE — tablet */
+  @media (max-width: 768px) {
+    .hero h1 { font-size: 40px; }
+    .budget-grid-2 { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  /* RESPONSIVE — mobile */
   @media (max-width: 640px) {
     .hero { padding: 40px 20px 36px; }
-    .hero h1 { font-size: 34px; }
-    .panel { padding: 24px 20px; }
+    .hero h1 { font-size: 30px; }
+    .panel { padding: 24px 16px; }
     .dest-split, .item-grid, .budget-grid-2, .vc-grid { grid-template-columns: 1fr; }
-    .tl-left { width: 72px; min-width: 72px; }
+    .tl-left { width: 64px; min-width: 64px; font-size: 11px; }
+    .tl-spine { width: 20px; min-width: 20px; }
+    .tl-card { margin-left: 10px; padding: 12px 14px; }
     .per-person-card { flex-direction: column; gap: 8px; text-align: center; }
-    .nav { padding: 0 16px; }
+    .nav { padding: 0 12px; }
+    .nav-btn { padding: 14px 14px; font-size: 12px; }
+    .love-note { max-width: 100%; }
+    .photo-strip { max-width: 100%; }
+    .photo-strip img { width: 50%; aspect-ratio: 4/5; }
+    .section-head h2 { font-size: 22px; }
+    .route-bar { padding: 14px 16px; }
+    .budget-summary { padding: 20px; }
+    .ppc-range { font-size: 22px; }
+  }
+
+  /* RESPONSIVE — very small */
+  @media (max-width: 400px) {
+    .photo-strip { flex-direction: column; }
+    .photo-strip img { width: 100%; aspect-ratio: 16/9; }
+    .tl-left { display: none; }
+    .tl-spine { display: none; }
+    .tl-card { margin-left: 0; }
   }
 </style>
 </head>
@@ -431,12 +467,12 @@
 </div>
 
 <nav class="nav">
-  <button class="nav-btn active" onclick="showPanel('overview')">Overview</button>
-  <button class="nav-btn" onclick="showPanel('itinerary')">Itinerary</button>
-  <button class="nav-btn" onclick="showPanel('london')">London Guide</button>
-  <button class="nav-btn" onclick="showPanel('croatia')">Croatia Guide</button>
-  <button class="nav-btn" onclick="showPanel('budget')">Budget</button>
-  <button class="nav-btn" onclick="showPanel('visas')">Visas & Admin</button>
+  <button class="nav-btn active" onclick="showPanel('overview', this)">Overview</button>
+  <button class="nav-btn" onclick="showPanel('itinerary', this)">Itinerary</button>
+  <button class="nav-btn" onclick="showPanel('london', this)">London Guide</button>
+  <button class="nav-btn" onclick="showPanel('croatia', this)">Croatia Guide</button>
+  <button class="nav-btn" onclick="showPanel('budget', this)">Budget</button>
+  <button class="nav-btn" onclick="showPanel('visas', this)">Visas &amp; Admin</button>
 </nav>
 
 <!-- OVERVIEW -->
@@ -1153,11 +1189,11 @@
 </div>
 
 <script>
-  function showPanel(id) {
+  function showPanel(id, btn) {
     document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
     document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
     document.getElementById(id).classList.add('active');
-    event.target.classList.add('active');
+    btn.classList.add('active');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 </script>
